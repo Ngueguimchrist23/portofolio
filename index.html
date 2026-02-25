@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { darkMode: 'class' }
+</script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition duration-500">
+
+<!-- NAVBAR -->
+<header class="fixed w-full bg-white dark:bg-gray-800 shadow z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="font-bold text-black-600">NGUEGUIM NANVOU CHRIST</h1>
+
+    <div class="flex items-center space-x-6">
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+
+      <!-- Dark Mode -->
+      <button onclick="toggleDark()" class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded">
+        🌙
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="py-24 md:py-32 flex items-center justify-center text-center bg-gradient-to-r from-blue-500 to-indigo-100 text-white">
+  <div data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">INGENIEUR ADMINISTRATION<br>SYSTEMES RESEAUX</h2>
+    <p class="mb-6">Création d'applications web modernes et sécurisées</p>
+    <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold">
+      Me contacter
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 max-w-5xl mx-auto px-6">
+  <h3 class="text-3xl font-bold mb-8 text-center" data-aos="fade-right">À propos</h3>
+  <p class="text-center" data-aos="fade-left">
+    Développeur spécialisé en Laravel, Tailwind CSS et MySQL.
+    Passionné par la sécurité et les systèmes performants.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800 px-6">
+  <h3 class="text-3xl font-bold text-center mb-12" data-aos="zoom-in">Projets</h3>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+    <div class="bg-white dark:bg-gray-700 rounded-xl shadow p-6" data-aos="fade-up">
+      <h4 class="font-bold text-xl mb-2">Système de stockage Laravel</h4>
+      <p>Authentification sécurisée, gestion privée des fichiers.</p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-700 rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="font-bold text-xl mb-2">Site vitrine moderne</h4>
+      <p>Design responsive avec Tailwind CSS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (Formspree) -->
+<section id="contact" class="py-20 px-6">
+  <h3 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Contact</h3>
+
+  <form action="https://formspree.io/f/VOTRE_ID_FORM" method="POST"
+        class="max-w-xl mx-auto space-y-4" data-aos="fade-up">
+
+    <input type="text" name="name" placeholder="Votre nom" required
+           class="w-full p-3 rounded bg-gray-200 dark:bg-gray-700">
+
+    <input type="email" name="email" placeholder="Votre email" required
+           class="w-full p-3 rounded bg-gray-200 dark:bg-gray-700">
+
+    <textarea name="message" placeholder="Votre message" required
+              class="w-full p-3 rounded bg-gray-200 dark:bg-gray-700"></textarea>
+
+    <input type="hidden" name="_subject"
+           value="Nouveau message depuis mon portfolio">
+
+    <button type="submit"
+            class="bg-blue-600 text-white px-6 py-3 rounded w-full hover:bg-blue-700 transition">
+        Envoyer
+    </button>
+
+  </form>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/237XXXXXXXXX"
+   target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition text-xl">
+   💬
+</a>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 text-center py-6">
+  © 2026 CHRIST
+</footer>
+
+<script>
+AOS.init();
+
+function toggleDark(){
+  document.documentElement.classList.toggle('dark');
+}
+</script>
+
+</body>
+</html>
