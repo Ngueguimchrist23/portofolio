@@ -21,19 +21,51 @@ tailwind.config = { darkMode: 'class' }
 
 <!-- NAVBAR -->
 <header class="fixed w-full bg-white dark:bg-gray-800 shadow z-50">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="font-bold text-black-600">NGUEGUIM NANVOU CHRIST</h1>
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-4">
 
-    <div class="flex items-center space-x-5">
-      <a href="#about">À propos</a>
-      <a href="#projects">Projets</a>
-      <a href="#contact">Contact</a>
+    <!-- Top bar -->
+    <div class="flex justify-between items-center">
 
-      <!-- Dark Mode -->
-      <button onclick="toggleDark()" class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded">
-        🌙
+      <!-- Logo -->
+      <h1 class="font-bold text-blue-600 text-lg md:text-xl">
+        Hugues Steve
+      </h1>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="#about" class="hover:text-blue-600 transition">À propos</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Projets</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+
+        <!-- Dark Mode Button -->
+        <button onclick="toggleDark()"
+          class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded hover:scale-110 transition">
+          🌙
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMenu()" class="md:hidden text-2xl">
+        ☰
       </button>
+
     </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden flex-col mt-4 space-y-4 md:hidden">
+
+      <a href="#about" class="block hover:text-blue-600">À propos</a>
+      <a href="#projects" class="block hover:text-blue-600">Projets</a>
+      <a href="#contact" class="block hover:text-blue-600">Contact</a>
+
+      <button onclick="toggleDark()"
+        class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded w-fit">
+        🌙 Mode sombre
+      </button>
+
+    </div>
+
   </div>
 </header>
 
@@ -114,6 +146,16 @@ tailwind.config = { darkMode: 'class' }
 </footer>
 
 <script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+
+function toggleDark() {
+  document.documentElement.classList.toggle("dark");
+}
+</script>
+
+<script>
 AOS.init();
 
 function toggleDark(){
@@ -123,4 +165,5 @@ function toggleDark(){
 
 </body>
 </html>
+
 
